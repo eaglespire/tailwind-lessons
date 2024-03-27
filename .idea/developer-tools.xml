@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="notes">
+    <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="notes" id="e97d24c6-45dc-42f2-9642-aa0ee5b1c5c6" name="Workbench">
+        <properties>
+          <property key="test" type="INPUT" value="kotlin.String|Tailwind utility classes are fun to work with" />
+        </properties>
+      </developerToolConfiguration>
+    </developerToolsConfigurations>
+  </component>
+</project>
