@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="mx-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis iure libero maiores nulla omnis quam rerum
+                tempore vero voluptatum? Accusantium alias commodi deleniti eaque eligendi, ipsum iure minima neque odit omnis
+                perferendis, quas repudiandae temporibus? Adipisci consequuntur, corporis cumque explicabo incidunt laboriosam molestias nulla omnis pariatur provident
+                quae voluptatum.
+            </p>
+            <button>Open Panel</button>
+        </div>
+    </div>
+
+
+    <div x-data>
+        <button @click="$dispatch('modal')" class="bg-purple-500 px-6 py-3 rounded-2xl shadow-sm text-white hover:bg-purple-800">Open Side Panel</button>
+    </div>
+
+
+
+
+    <div x-data="{ open:false }" @modal.window="open=true">
+        <div class="fixed inset-y-0 right-0 z-10 bg-white shadow-lg w-96" x-show="open" @click.away="open=false">
+            <div class="p-4">
+                <h1 class="text-lg font-semibold mb-4">Sidebar Content</h1>
+                <ul>
+                    <li class="py-2">Menu Item 1</li>
+                    <li class="py-2">Menu Item 2</li>
+                    <li class="py-2">Menu Item 3</li>
+                    <li class="py-2">Menu Item 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="mx-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis iure libero maiores nulla omnis quam rerum
+                tempore vero voluptatum? Accusantium alias commodi deleniti eaque eligendi, ipsum iure minima neque odit omnis
+                perferendis, quas repudiandae temporibus? Adipisci consequuntur, corporis cumque explicabo incidunt laboriosam molestias nulla omnis pariatur provident
+                quae voluptatum.
+            </p>
+        </div>
+    </div>
+
+        <div x-data="{ isOpen : false }" x-show.transition.duration.10000ms="isOpen"  @modal.window="isOpen=true" class="fixed inset-0 bg-slate-500 flex items-center justify-center">
+            <div  class="bg-white shadow-2xl rounded-2xl px-6 py-3 flex flex-col gap-6" @click.away="isOpen = false">
+                <div class="flex justify-between bg-slate-200 p-3 rounded-xl">
+                    <h1>My First Modal With Alpine & Tailwind</h1>
+                    <button @click="isOpen = false">X</button>
+                </div>
+                <div class="">
+                    <p>Modal content goes in here</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime nulla pariatur quas, similique sit vero?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eaque eius molestiae neque nulla ratione.</p>
+                </div>
+            </div>
+        </div>
+
+        <div x-data>
+            <button @click="$dispatch('modal')" class="bg-orange-400 px-6 py-3 rounded-2xl text-white">Open Modal</button>
+        </div>
+
+
+        <div x-data @notify="alert($event.detail.message)">
+            <button @click="$dispatch('notify',{ message: 'This always works' })" class="bg-blue-400 px-6 py-3 rounded-2xl text-white">Click me</button>
+        </div>
+</body>
+</html>
